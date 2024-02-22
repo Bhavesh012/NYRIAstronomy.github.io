@@ -1,0 +1,23 @@
+---
+export interface Props {
+  images: { src: string; link: string; text: string }[];
+  layout?: string;
+}
+
+const { images, layout = '2x2' } = Astro.props;
+---
+
+<div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+  {images.map((image) => (
+    <a href={image.link} class="group overflow-hidden relative block">
+      <img
+        src={image.src}
+        alt={image.text}
+        class="w-60 h-full object-cover rounded-full cursor-pointer group-hover:scale-110 transition duration-200"
+      />
+      <div class="absolute inset-0 bg-none bg-opacity-50 group-hover:opacity-105 transition duration-200 flex items-center justify-center text-white text-2xl ">
+        {image.text}
+      </div>
+    </a>
+  ))}
+</div>

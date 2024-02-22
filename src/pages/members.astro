@@ -5,6 +5,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import ImageGallery from '~/components/widgets/ImageGallery.astro';
 
 const metadata = {
   title: 'Members',
@@ -18,15 +19,16 @@ const metadata = {
 
   >
     <Fragment slot="title">
-      Members 
+      <span class="text-orange-600 dark:text-orange-600 highlight font-mono tracking-wider leading-tight font-normal">Members </span>
     </Fragment>
 
-    <Fragment slot="subtitle">
+    <Fragment slot="content">
       NYRIA is a network of young astronomers from all around the world, working in different areas of astronomical instrumention. Here you can find members as according to their country, research areas and more. The map illustrates the current reach of NYRIA. To search for individual members by country, research area and institute please click on the desired link.
+      <br/><br/><br/>
     </Fragment>
+    
 
-
-    <Fragment slot="subtitle">
+    <Fragment slot="content">
 
         <iframe aria-label="World choropleth map" id="datawrapper-chart-0ZLOT" src="//datawrapper.dwcdn.net/0ZLOT/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400"></iframe>
         <script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();</script>
@@ -43,12 +45,27 @@ const metadata = {
   <Stats
     title="Statistics about us"
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { title: 'Members', amount: '132' },
+      { title: 'Countries', amount: '13' },
+      { title: 'Research Areas', amount: '18' },
+      { title: 'Workshops', amount: '09' },
     ]}
   />
+
+  <!-- ImageGallery Widget ************** -->
+
+  <div class="container mx-auto px-4">
+    <ImageGallery
+      images={[
+        { src: 'src/assets/images/icons/nyrialight.JPG', link: '/about', text: 'All Members' },
+        { src: 'src/assets/images/icons/country.jpg', link: '/contact', text: 'Country' },
+        { src: 'src/assets/images/icons/research.jpg', link: '/contact', text: 'Research Area' },
+        { src: 'src/assets/images/icons/institute.jpg', link: '/contact', text: 'Institute' },
+        { src: 'src/assets/images/icons/position.jpg', link: '/contact', text: 'Position' },
+      ]}
+    />
+  </div>
+  
 
   <!-- Features3 Widget ************** -->
   <!-- <Features3
@@ -228,5 +245,5 @@ const metadata = {
         icon: 'tabler:headset',
       },
     ]} -->
-  /> -->
+
 </Layout>
