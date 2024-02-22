@@ -1,9 +1,9 @@
 ---
 import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
-import Hero from '~/components/widgets/Hero.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
+import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -14,58 +14,93 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-
-    tagline="Attendees and organisers of the 2014 Summer School, Reaching the limits of the sky, astronomical instrumentation in the 21st Century."
-
+  <Hero3
     image={{
       src: 'src/assets/images/workshop/2014/Chile128.jpg',
       alt: 'Group picture, 2014.',
+      
     }}
+    imageCaption="Attendees and organisers of the 2014 Summer School, Reaching the limits of the sky, astronomical instrumentation in the 21st Century."
   >    
 
   <Fragment slot="title">
-    About us <br />
-    <span class="text-accent dark:text-white highlight"> </span>
+    <span class="text-orange-600 dark:text-white highlight font-mono tracking-wider leading-tight font-normal">About Us</span>
   </Fragment>
 
-    <Fragment slot="subtitle">
-    <p>
+  <Fragment slot="subtitle">
+    <!-- <h3 class="text-2xl font-mono tracking-wider leading-tight font-normal dark:text-white sm:text-3xl mb-2">Our Story</h3> -->
+
+    <!-- <p class="text-left">
       In 2014 the University of Heidelberg and the Max Planck Institute for Astronomy
       (MPIA) together with the Santander Bank organised a summer school, "<i>Reaching
       the limits of the sky, astronomical instrumentation in the 21st Century</i>".
     </p>
+    <br />
 
-      This summer school addressed recent developments in adaptive optics and
-       interferometry with an emphasis on VLTI and E-ELT instrumentation.  Over the
-      course of two weeks, eighteen students from Europe and Latin America gathered
+    <p class="text-left">
+      This summer school addressed recent developments in adaptive optics and interferometry with an emphasis 
+      on VLTI and E-ELT instrumentation. Over the course of two weeks, eighteen students 
+      from Europe and Latin America gathered
       in Santiago, Chile, to learn from experts, socialise and learn about other
       areas of instrumentation from each other. In addition they were given a guided
       tour of the ESO facilities at Paranal observatory.
-
-
-    <p>
-      The next generation of telescopes and instruments will be built by large
-      international consortia. Therefore, it is essential that the next generation of
-      astronomical instrumentalists get to know each other in preparation for working
-      in these groups. To this end we aim to make these meetings annual and hope that
-      the network of early career researchers grow and strengthen. This will allow us
-      to update our research and findings, exchange ideas and discuss recent
-      developments in everyone’s field. The topics will span from hardware and
-      software, to topics as diverse as wavefront sensing, coronagraphy,
-      spectroscopy, fiber optics, and post-processing techniques to reach the limit
-      of current and future instruments.
+    </p>
+    <br />
+    <p class="text-left">
+      In 2015, half of the students met in Heidelberg to give talks, socialise and visit 
+      the facilities at MPIA and the Landessternewarte, Heidelberg, Germany. Following this 
+      first unofficial meeting, the idea grew to start a yearly gathering for instrumentation 
+      graduates and early postgraduates to network, visit institutes involved in instrumentation 
+      for astrophysics and learn about other fields within astronomical instrumentation.
+    </p>
+    <br /> -->
+    <p class="text-left">
+      NYRIA was built upon the idea of a “<i>Network of Young Researchers in Instrumentation for Astronomy.</i>” 
+      This network focuses primarily on ground-based instrumentation in the visible-infrared domain. 
+      From 2022, our focus also included space-based instrumentation.
+    </p>
+    <br />
+    <p class="text-left">
+      The next generation of telescopes and instruments will be built by large international consortia. 
+      Therefore, it is essential that the next generation of astronomical instrumentalists get to know 
+      each other in preparation for working in these groups. To this end, we aim to make these meetings 
+      annual and hope the network of early career researchers grows and strengthens. This will allow us 
+      to update our research and findings, exchange ideas and discuss recent developments in everyone’s 
+      field. The topics span from hardware and software to topics as diverse as wavefront sensing, 
+      coronagraphy, spectroscopy, fiber optics, and post-processing techniques to reach the limit of 
+      current and future instruments.
     </p>
 
-    </Fragment> -->
-  </Hero>
+  </Fragment>
+  </Hero3>
+
+  <Steps
+  id="timeline"
+  title="Our Story"
+  items={[
+    {
+      title: '2014 <br /> <span class="font-normal">Santiago, Chile</span>',
+      description: "In 2014, the University of Heidelberg and the Max Planck Institute for Astronomy (MPIA), together with the Santander Bank, organised a summer school, '<i>Reaching the limits of the sky, astronomical instrumentation in the 21st Century</i>'. <br /><br /> This summer school addressed recent developments in adaptive optics and interferometry with an emphasis on VLTI and ELT instrumentation. Over the course of two weeks, eighteen students from Europe and Latin America gathered in Santiago, Chile, to learn from experts, socialise and learn about other areas of instrumentation from each other. In addition, they were given a guided tour of the ESO facilities at Paranal Observatory.",
+      icon: 'tabler:calendar-event',
+    },
+    {
+      title: '2015 <br /> <span class="font-normal">Heidelberg, Germany</span>',
+      description:
+        "In 2015, half of the students met in Heidelberg to give talks, socialise and visit the facilities at MPIA and the Landessternewarte, Heidelberg, Germany. <br /><br />Following this first unofficial meeting, the idea grew to start a yearly gathering for instrumentation graduates and early postgraduates to network, visit institutes involved in instrumentation for astrophysics and learn about other fields within astronomical instrumentation.",
+      icon: 'tabler:calendar-event',
+    }
+  ]}
+  classes={{ container: 'max-w-3xl', description: 'font-normal' }}
+  
+  
+  />
 
   <!-- Stats Widget ****************** -->
 
   <Stats
     title="Statistics about us"
     stats={[
-      { title: 'Workshops', amount: '??' },
+      { title: 'Workshops', amount: '09' },
       { title: 'Active Members', amount: '> 20' },
       // { title: 'Templates', amount: '12' },
       // { title: 'Awards', amount: '24' },
